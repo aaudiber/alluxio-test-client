@@ -19,6 +19,7 @@ public class TestClient {
         FileInStream in = fs.openFile(new AlluxioURI(path.getPath()));
         byte[] buf = new byte[4096];
         while (in.read(buf) >= 0);
+        in.close();
         System.out.printf("Finished reading %s\n", path.getPath());
       }
     }
